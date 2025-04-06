@@ -1,19 +1,26 @@
-# Avoid accidental upload of the Sketch and Figma design files
-#####################################################
-## Please do not remove lines 5 and 6 - thanks! 🙂 ##
-#####################################################
+# Evitar archivos de diseño de Figma, Sketch, XD
 *.sketch
 *.fig
-node_modules
-design
-package.json
-README.md 
-# Avoid accidental XD upload if you convert the design file
-###############################################
-## Please do not remove line 12 - thanks! 🙂 ##
-###############################################
 *.xd
 
-# Avoid your project being littered with annoying .DS_Store files!
+# Node modules (si usás npm)
+node_modules/
+
+# Archivos de sistema
 .DS_Store
+Thumbs.db
+
+# Archivos del editor
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos temporales / backups
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Ignorar Prettier config si no lo usás compartido
 .prettierignore
