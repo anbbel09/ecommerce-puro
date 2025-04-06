@@ -10,60 +10,30 @@ const TextEmpty = document.getElementById('TextEmpty');
 let cartProductInfo = document.getElementById('cartProductInfo');
 let nameProduct = document.getElementById('nameProduct');
 let priceProduct = document.getElementById('priceProduct');
+let productFirst = document.getElementById('productFirst');
+console.log(productFirst);
 
 
-// cart.addEventListener('click', () => {
-//     if (cartCanvas.style.visibility === 'hidden') {
-//         cartCanvas.style.visibility = 'visible';
-//     } else {
-//         cartCanvas.style.visibility = 'hidden';
-//     }
-// });
+const carrousel = document.getElementById('carrousel');
 
-// plusCount.addEventListener('click', () => {
-//     let setCount = parseInt(Count.textContent);
-//     setCount++; 
-//     Count.textContent = setCount;
-//     Arr.push(setCount); // Agregás al array
-// });
+carrousel.addEventListener('click', (e) => {
 
-// minusCount.addEventListener('click', () => {
-//     let setCount = parseInt(Count.textContent); 
-//         setCount--; 
-//         Count.textContent = setCount;
-//         Arr.pop(); 
-//         if(Arr.length == 0){
-//             cartProductInfo.innerHTML = ``;
-//         }
-// });
+    let element = e.target;
 
-// btnCart.addEventListener('click', () => {
-//     if( Arr.length > 0){
-
-//         TextEmpty.style.display = 'none';
+    if(element !== carrousel){
         
-//        let ObjCart = {
-//             name: nameProduct.textContent,
-//             count: Arr,
-//             price: parseInt(priceProduct.textContent),
-//             total: parseFloat(Count.textContent) * parseInt(priceProduct.textContent)
-//         };
-//         console.log(ObjCart);
-//         cartProductInfo.innerHTML = `<figure class="w-1/4 my-2"><img class="rounded-lg" src="/images/image-product-1.jpg"></figure>
-//         <div>
-//             <h2 class="mt-2">${ObjCart.name}</h2>
-//             <div>
-//             <p class="text-gray-400 font-medium ">$${ObjCart.price} x ${parseInt(Count.textContent)} <b class="text-black"> $${ObjCart.total}</p>
-//             </div>
-//         </div>`;
-//     } else{
-//         TextEmpty.style.display = 'block';
+        [...carrousel.children].forEach(child => {
+            child.classList.remove('brightness-50', 'border-orange-600' );
+        });
         
-        
-//     }
+        element.classList.add('brightness-50', 'border-orange-600');
 
+        productFirst.src = element.src;
 
-// });
+    }
+
+    
+});
 
 cart.addEventListener('click', () => {
     cartCanvas.style.visibility = (cartCanvas.style.visibility === 'hidden' || cartCanvas.style.visibility === '') 
@@ -124,4 +94,59 @@ btnCart.addEventListener('click', () => {
     updateCartUI();
     cartCanvas.style.visibility = 'visible';
 });
+
+
+
+// cart.addEventListener('click', () => {
+//     if (cartCanvas.style.visibility === 'hidden') {
+//         cartCanvas.style.visibility = 'visible';
+//     } else {
+//         cartCanvas.style.visibility = 'hidden';
+//     }
+// });
+
+// plusCount.addEventListener('click', () => {
+//     let setCount = parseInt(Count.textContent);
+//     setCount++; 
+//     Count.textContent = setCount;
+//     Arr.push(setCount); // Agregás al array
+// });
+
+// minusCount.addEventListener('click', () => {
+//     let setCount = parseInt(Count.textContent); 
+//         setCount--; 
+//         Count.textContent = setCount;
+//         Arr.pop(); 
+//         if(Arr.length == 0){
+//             cartProductInfo.innerHTML = ``;
+//         }
+// });
+
+// btnCart.addEventListener('click', () => {
+//     if( Arr.length > 0){
+
+//         TextEmpty.style.display = 'none';
+        
+//        let ObjCart = {
+//             name: nameProduct.textContent,
+//             count: Arr,
+//             price: parseInt(priceProduct.textContent),
+//             total: parseFloat(Count.textContent) * parseInt(priceProduct.textContent)
+//         };
+//         console.log(ObjCart);
+//         cartProductInfo.innerHTML = `<figure class="w-1/4 my-2"><img class="rounded-lg" src="/images/image-product-1.jpg"></figure>
+//         <div>
+//             <h2 class="mt-2">${ObjCart.name}</h2>
+//             <div>
+//             <p class="text-gray-400 font-medium ">$${ObjCart.price} x ${parseInt(Count.textContent)} <b class="text-black"> $${ObjCart.total}</p>
+//             </div>
+//         </div>`;
+//     } else{
+//         TextEmpty.style.display = 'block';
+        
+        
+//     }
+
+
+// });
 
