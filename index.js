@@ -84,7 +84,7 @@ function updateCartUI() {
 
         cartProductInfo.innerHTML = `
             <figure class="w-1/4 my-2">
-                <img class="rounded-lg" src="./images/image-product-1.jpg">
+                <img class="rounded-lg" src="images/image-product-1.jpg">
             </figure>
             <div>
                 <h2 class="mt-2">${ObjCart.name}</h2>
